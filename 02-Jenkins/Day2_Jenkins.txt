@@ -1,0 +1,252 @@
+    1  wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+    2  deb https://pkg.jenkins.io/debian-stable binary/
+    3  sudo apt-get update
+    4  sudo apt-get install jenkins
+    5  ps -ef | grep apt
+    6  kill -9 2495 
+    7  ps -ef | grep apt
+    8  kill -9 2500
+    9  ps -ef | grep apt
+   10  kill -9 10502
+   11  ps -ef | grep apt
+   12  cd 
+   13  wget http://mirrors.jenkins.io/war-stable/latest/jenkins.war
+   14  ps -ef | grep apt
+   15  sudo apt-get install jenkins
+   16  vi /etc/apt/sources.list
+   17  apt-get update ; apt-get install jenkins -y 
+   18  ls
+   19  ip addr 
+   20  ls
+   21  cd devops-acc-2020March16/
+   22  ls
+   23  cd 02-Jenkins/01-Setup/
+   24  ls
+   25  vi setup
+   26  ls
+   27  cd 
+   28  ls
+   29  cd devops-acc-2020March16/
+   30  ls
+   31  git add . ; git commit -m "Jenkins-Setup"
+   32  git push origin master
+   33  l
+   34  cat 02-Jenkins/01-Setup/setup 
+   35  date
+   36  ls
+   37  cd ..
+   38  ls
+   39  git clone https://github.com/amitvashisttech/devops-acc-20200113.git
+   40  ls
+   41  cd devops-acc-2020March16/
+   42  ls
+   43  cd 02-Jenkins/
+   44  ls
+   45  cp -rf ../../devops-acc-20200113/02-Jenkins/atmosphere . 
+   46  ls
+   47  cd atmosphere/
+   48  ls
+   49  cd spring-boot-samples/spring-boot-sample-atmosphere/
+   50  ls
+   51  rm -rf docker-compose.yaml Dockerfile 
+   52  ls
+   53  ls -ltr 
+   54  mvn -version 
+   55  mvn compile
+   56  cd 
+   57  ls
+   58  git clone https://github.com/amitvashist7/jenkins2-course-spring-petclinic.git
+   59  ls
+   60  cd jenkins2-course-spring-petclinic/
+   61  ls
+   62  ls -ltr 
+   63  mvn compile
+   64  ls
+   65  cd target/
+   66  ls
+   67  cd classes/
+   68  ls
+   69  cd ..
+   70  ls
+   71  cd ..
+   72  ls
+   73  mvn test
+   74  ls
+   75  mvn package
+   76  ls
+   77  cd target/
+   78  ls
+   79  java -jar petclinic.war
+   80  cd 
+   81  curl -O http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz
+   82  mkdir /opt/tomcat
+   83  tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1
+   84  ls
+   85  file apache-tomcat-8.5.5.tar.gz 
+   86  cat apache-tomcat-8.5.5.tar.gz 
+   87  llls
+   88  ls
+   89  rm -rf apache-tomcat-8.5.5.tar.gz 
+   90  wget http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.51/bin/apache-tomcat-8.5.51.zip
+   91  ls
+   92  apt-get install unzip -y 
+   93  ls
+   94  unzip apache-tomcat-8.5.51.zip 
+   95  ls
+   96  mkdir /opt/tomcat
+   97  cp -tg apache-tomcat-8.5.51/* /opt/tomcat/
+   98  cp -rf apache-tomcat-8.5.51/* /opt/tomcat/
+   99  cd /opt/tomcat/
+  100  ls
+  101  cd bin/
+  102  ls
+  103  chmod +x catalina.sh
+  104  chmod +x startup.sh
+  105  ./startup.sh 
+  106  ps -ef | grep -i tomcat 
+  107  netstat -tulnp
+  108  ls
+  109  cd ../
+  110  ls
+  111  cd webapps/
+  112  ls
+  113  cp -rf /root/jenkins2-course-spring-petclinic/target/petclinic.war . 
+  114  ls
+  115  cd 
+  116  ls
+  117  cd devops-acc-2020March16/
+  118  ls
+  119  cd 02-Jenkins/
+  120  ls
+  121  rm -rf atmosphere/
+  122  ls
+  123  cp -rf /root/jenkins2-course-spring-petclinic 02-Petclinic-Project
+  124  ls
+  125  cd 02-Petclinic-Project/
+  126  ls
+  127  mvn clean 
+  128  ls
+  129  ls -a 
+  130  rm -rf .git
+  131  ls
+  132  cd ..
+  133  ls
+  134  cd ..
+  135  ls
+  136  git add . ; git commit -m "Petclinic Project"
+  137  git push 
+  138  cd 
+  139  ls
+  140  rm -rf jenkins2-course-spring-petclinic/
+  141  ls
+  142  cd devops-acc-2020March16/
+  143  ls
+  144  git config --list 
+  145  ls
+  146  cd 
+  147  ls
+  148  ls -ltr 
+  149  ls -a 
+  150  cd .jenkins/
+  151  ls
+  152  cd workspace/
+  153  ls -ltr 
+  154  cd Petclinic-Project-FreeStyle-Job/
+  155  ls
+  156  cd 02-Jenkins/
+  157  ls
+  158  cd 02-Petclinic-Project/
+  159  ls
+  160  cd target/
+  161  ls
+  162  cd ..
+  163  ls
+  164  cd ..
+  165  sl
+  166  ls
+  167  cd 
+  168  ls
+  169  cd devops-acc-2020March16/
+  170  ls
+  171  git config --list 
+  172  ls
+  173  git pull 
+  174  echo "Test 1" > CHANGE_ME.txt ; git add . ; git commit -m "Pool SCM Test" ; git push 
+  175  ls
+  176  cat CHANGE_ME.txt 
+  177  echo "Test 2" > CHANGE_ME.txt ; git add . ; git commit -m "Pool SCM Test-2" ; git push 
+  178  cd 
+  179  cd .jenkins/workspace/Petclinic-Project-FreeStyle-Job/
+  180  ls 
+  181  cat CHANGE_ME.txt 
+  182  cd 02-Jenkins/02-Petclinic-Project/
+  183  ls
+  184  ls -ltr 
+  185  date
+  186  ls -ltr target/petclinic.war 
+  187  ls
+  188  cd ..
+  189  ls
+  190  cd ..
+  191  ls
+  192  ls -ltr 
+  193  cd Test-Job-1/
+  194  ls
+  195  mkdir Amit
+  196  echo "Hello" > Amit/Job1.txt
+  197  ls
+  198  cd ..
+  199  ls
+  200  cd Petclinic-Project-FreeStyle-Job/
+  201  ls
+  202  ls 02-Jenkins/cd 
+  203  cd 
+  204  ls
+  205  cd devops-acc-2020March16/
+  206  ks
+  207  ls
+  208  git pull
+  209  cd 02-Jenkins/
+  210  ls
+  211  mkdir 03-Pipeline
+  212  vi 03-Pipeline/stage-pipeline
+  213  ls
+  214  cd ..
+  215  ls
+  216  git add . ; git commit -m "Stage Pipeline" ; git push 
+  217  ls
+  218  cd 02-Jenkins/03-Pipeline/
+  219  ls
+  220  cp -rf stage-pipeline Jenkinsfile
+  221  ls
+  222  cd ..
+  223  ls
+  224  git add . ; git commit -m "Stage Pipeline as code" ; git push 
+  225  ls
+  226  cat CHANGE_ME.txt 
+  227  echo "Test 3" >> CHANGE_ME.txt 
+  228  git commit -am "Test 3" ; git push 
+  229  ls
+  230  cd 
+  231  ls
+  232  cd - 
+  233  ls
+  234  cd 02-Jenkins/
+  235  s
+  236  ls
+  237  docker run --restart unless-stopped --name mailhog -p 1025:1025 -p 8025:8025 -d mailhog/mailhog
+  238  docker ps 
+  239  ls
+  240  cd 03-Pipeline/
+  241  ls
+  242  cp -rf Jenkinsfile Jenkinsfile-Email
+  243  ls
+  244  vim Jenkinsfile-Email 
+  245  ls
+  246  cp -rf Jenkinsfile-Email Jenkinsfile
+  247  git add . ; git commit -m "Jenkins with Email"; git push 
+  248  ls
+  249  history 
+  250  cd ..
+  251  ls
+  252  history > Day2_Jenkins.txt
