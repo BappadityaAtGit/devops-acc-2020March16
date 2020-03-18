@@ -65,3 +65,78 @@
   163  ls
   164  history 
   165  history > Day3_Docker.txt
+    1  cd 
+    2  ls
+    3  docker images 
+    4  docker rmi busybox
+    5  docker images 
+    6  docker rmi ubuntu
+    7  docker rmi ubuntu:16.04
+    8  ls
+    9  docker ps 
+   10  docker ps -l
+   11  docker ps 
+   12  docker inspect 846ba69d388d
+   13  docker run -itd busybox 
+   14  docker ps 
+   15  docker ps -l
+   16  docker ps -lq
+   17  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq)
+   18  docker inspect $(docker ps -lq)
+   19  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq)
+   20  docker images 
+   21  docker inspect busybox
+   22  docker history busybox
+   23  docker run --name ubuntu-apache-test1 -it ubuntu:16.04
+   24  docker ps 
+   25  docker inspect ubuntu-apache-test1
+   26  curl 172.17.0.4
+   27  ls
+   28  docker ps -a
+   29  docker attach ubuntu-apache-test1
+   30  ls
+   31  docker images 
+   32  docker ps 
+   33  docker commit -p -m "My First Apache Image" ubuntu-apache-test1 ubuntu-apache:v1
+   34  docker ps 
+   35  docker kill 45d3e5c07c59
+   36  docker ps 
+   37  docker images 
+   38  docker run -itd ubuntu-apache:v1 /bin/bash
+   39  docker ps 
+   40  docker inspect 88579e5333a1
+   41  curl 172.17.0.4
+   42  docker run -itd ubuntu-apache:v1 /bin/bash
+   43  curl 172.17.0.5
+   44  curl 172.17.0.6
+   45  curl 172.17.0.7
+   46  curl 172.17.0.8
+   47  docker images
+   48  curl 172.17.0.7
+   49  docker run -it ubuntu-apache:v1 /bin/bash
+   50  docker commit -p -m "My First Apache Image-v2" af99be565bfe ubuntu-apache:v2
+   51  docker images 
+   52  docker run -itd ubuntu-apache:v2 /bin/bash
+   53  curl 172.17.0.7
+   54  curl 172.17.0.8
+   55  curl 172.17.0.9
+   56  docker run -it ubuntu-apache:v1 /bin/bash
+   57  docker run -it ubuntu-apache:v2 /bin/bash
+   58  docker commit -p -m "My First Apache Image-v3" a7c362aa8c16 ubuntu-apache:v3
+   59  docker run -itd ubuntu-apache:v3 /bin/bash
+   60  curl 172.17.0.10
+   61  curl 172.17.0.9
+   62  curl 172.17.0.11
+   63  docker images 
+   64  docker network ls 
+   65  docker network inspect 00effa31db64
+   66  docker kill $(docker ps -qa)
+   67  docker network inspect 00effa31db64
+   68  ip addr 
+   69  history 
+   70  ls
+   71  cd devops-acc-2020March16/
+   72  ls
+   73  cd 03-Docker/
+   74  ls
+   75  history >> Day3_Docker.txt 
