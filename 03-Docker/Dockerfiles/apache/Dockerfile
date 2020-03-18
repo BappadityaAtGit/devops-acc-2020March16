@@ -13,5 +13,8 @@ RUN apt-get install apache2 -y
 # Cutome Page
 COPY amit.html /var/www/html/index.html
 
+# Expose Port Meta
+EXPOSE 80 3306
+
 # Bring up the Apache Service
 CMD ["/usr/sbin/apache2ctl","-D", "FOREGROUND"]
