@@ -140,3 +140,191 @@
    73  cd 03-Docker/
    74  ls
    75  history >> Day3_Docker.txt 
+    1  cd 
+    2  ls
+    3  docker images 
+    4  docker rmi busybox
+    5  docker images 
+    6  docker rmi ubuntu
+    7  docker rmi ubuntu:16.04
+    8  ls
+    9  docker ps 
+   10  docker ps -l
+   11  docker ps 
+   12  docker inspect 846ba69d388d
+   13  docker run -itd busybox 
+   14  docker ps 
+   15  docker ps -l
+   16  docker ps -lq
+   17  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq)
+   18  docker inspect $(docker ps -lq)
+   19  docker inspect --format '{{.Name}} {{.State.Running}} {{.NetworkSettings.IPAddress}}' $(docker ps -lq)
+   20  docker images 
+   21  docker inspect busybox
+   22  docker history busybox
+   23  docker run --name ubuntu-apache-test1 -it ubuntu:16.04
+   24  docker ps 
+   25  docker inspect ubuntu-apache-test1
+   26  curl 172.17.0.4
+   27  ls
+   28  docker ps -a
+   29  docker attach ubuntu-apache-test1
+   30  ls
+   31  docker images 
+   32  docker ps 
+   33  docker commit -p -m "My First Apache Image" ubuntu-apache-test1 ubuntu-apache:v1
+   34  docker ps 
+   35  docker kill 45d3e5c07c59
+   36  docker ps 
+   37  docker images 
+   38  docker run -itd ubuntu-apache:v1 /bin/bash
+   39  docker ps 
+   40  docker inspect 88579e5333a1
+   41  curl 172.17.0.4
+   42  docker run -itd ubuntu-apache:v1 /bin/bash
+   43  curl 172.17.0.5
+   44  curl 172.17.0.6
+   45  curl 172.17.0.7
+   46  curl 172.17.0.8
+   47  docker images
+   48  curl 172.17.0.7
+   49  docker run -it ubuntu-apache:v1 /bin/bash
+   50  docker commit -p -m "My First Apache Image-v2" af99be565bfe ubuntu-apache:v2
+   51  docker images 
+   52  docker run -itd ubuntu-apache:v2 /bin/bash
+   53  curl 172.17.0.7
+   54  curl 172.17.0.8
+   55  curl 172.17.0.9
+   56  docker run -it ubuntu-apache:v1 /bin/bash
+   57  docker run -it ubuntu-apache:v2 /bin/bash
+   58  docker commit -p -m "My First Apache Image-v3" a7c362aa8c16 ubuntu-apache:v3
+   59  docker run -itd ubuntu-apache:v3 /bin/bash
+   60  curl 172.17.0.10
+   61  curl 172.17.0.9
+   62  curl 172.17.0.11
+   63  docker images 
+   64  docker network ls 
+   65  docker network inspect 00effa31db64
+   66  docker kill $(docker ps -qa)
+   67  docker network inspect 00effa31db64
+   68  ip addr 
+   69  history 
+   70  ls
+   71  cd devops-acc-2020March16/
+   72  ls
+   73  cd 03-Docker/
+   74  ls
+   75  history >> Day3_Docker.txt 
+   76  git add . ; git commit -m "Docker Images"; git push 
+   77  ls
+   78  cd ..
+   79  ls
+   80  cd 03-Docker/
+   81  ls
+   82  mkdir Dockerfiles
+   83  mkdir Dockerfiles/apache
+   84  cd Dockerfiles/apache/
+   85  vim Dockerfile
+   86  ls
+   87  vim amit.html
+   88  ls
+   89  docker build -t myapache:v1 . 
+   90  docker images
+   91  docker run -d myapache:v1
+   92  docker ps 
+   93  docker inspect b09c521acdee
+   94  curl 172.17.0.2
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd ..
+   99  ls
+  100  cd ..
+  101  ls
+  102  git add . ; git commit -m "DockerFile"; git push
+  103  ls
+  104  cd 03-Docker/
+  105  ls
+  106  cd Dockerfiles/
+  107  ls
+  108  cd apache/
+  109  ls
+  110  cat Dockerfile 
+  111  docker images
+  112  ls
+  113  docker ps 
+  114  curl 172.17.0.2
+  115  ls
+  116  cd 
+  117  ls
+  118  docker images 
+  119  docker run -d -p 8080:80 myapache:v1
+  120  docker ps 
+  121  docker run -d -P myapache:v1
+  122  docker ps 
+  123  netstat -tulnp 
+  124  docker run -d -p 8080:80 myapache:v1
+  125  docker run -d -p 8081:80 myapache:v1
+  126  netstat -tulnp 
+  127  docker run -d -P myapache:v1
+  128  netstat -tulnp 
+  129  docker ps 
+  130  ls
+  131  cd devops-acc-2020March16/
+  132  ls
+  133  cd 03-Docker/
+  134  ls
+  135  cd Dockerfiles/apache/
+  136  ls
+  137  vim Dockerfile 
+  138  docker build -t myapache:v2 . 
+  139  docker images 
+  140  docker ps 
+  141  docker run -d -P myapache:v2
+  142  docker ps 
+  143  netstat -tulnp
+  144  iptables -L
+  145  ls
+  146  cd ..
+  147  ls
+  148  cd ..
+  149  ls
+  150  cd ..
+  151  ls
+  152  git add . ; git commit -m "DockerFile with Expose"; git push 
+  153  history 
+  154  ls
+  155  cd 03-Docker/
+  156  ls
+  157  cd Dockerfiles/
+  158  ls
+  159  mkdir petclinic
+  160  ls
+  161  cd petclinic/
+  162  ls
+  163  vim Dockerfile
+  164  cp -rf /root/.jenkins/workspace/Petclinic-Project-Pipeline-as-a-code/02-Jenkins/02-Petclinic-Project/target/petclinic.war . 
+  165  ls
+  166  docker run --help
+  167  ls
+  168  cd ..
+  169  ls
+  170  cd petclinic/
+  171  ls
+  172  docker build  -t tomcat-petclinic:v1 . 
+  173  docker images 
+  174  docker run -d -P tomcat-petclinic:v1
+  175  docker ps 
+  176  ls
+  177  rm -rf petclinic.war 
+  178  cd ..
+  179  ls
+  180  cd ..
+  181  ls
+  182  cd ..
+  183  ls
+  184  git add . ; git commit -m "Petclinic Dockerfile"; git push 
+  185  ls
+  186  cd 03-Docker/
+  187  ls
+  188  history >> Day3_Docker.txt 
