@@ -1,0 +1,67 @@
+   99  docker ps 
+  100  docker search ubuntu
+  101  docker search ubuntu:16.04
+  102  docker ps 
+  103  ls
+  104  docker ps 
+  105  docker images 
+  106  docker ps 
+  107  docker ps -a
+  108  docker rm b38775564855
+  109  docker ps -a
+  110  docker images 
+  111  docker run -itd busybox
+  112  docker ps 
+  113  df -h 
+  114  docker run -it busybox 
+  115  docker ps 
+  116  docker run -itd busybox 
+  117  docker ps 
+  118  docker images 
+  119  docker run -it ubuntu 
+  120  docker run -it ubuntu:16.04
+  121  docker run -it ubuntu:16.04 /bin/sh
+  122  docker run -it ubuntu:16.04 /bin/csh
+  123  docker ps 
+  124  docker run --name mycont -itd busybox
+  125  docker ps 
+  126  docker run --name myweb-petclinic-cont-1 -itd busybox
+  127  docker run --name myweb-petclinic-cont-2 -itd busybox
+  128  docker run --name myweb-petclinic-cont-3 -itd busybox
+  129  docker ps 
+  130  history 
+  131  docker images 
+  132  docker run -itd centos 
+  133  docker pull amitvashist7/apache-ex4
+  134  docker login 
+  135  docker pull amitvashist7/apache-ex4
+  136  docker logout
+  137  docker ps 
+  138  history 
+  139  docker ps 
+  140  docker stop ff12e5e982cf
+  141  docker kill 4453cdc62f2f
+  142  docker ps -a
+  143  docker ps -a | grep -i busybox 
+  144  docker ps -a | grep -i busybox | awk -f " " '{print $1}'
+  145  docker ps -a | grep -i busybox | awk -F " " '{print $1}'
+  146  docker kill $(docker ps -a | grep -i busybox | awk -F " " '{print $1}')
+  147  docker ps 
+  148  docker kill 1724bf9da74a
+  149  docker ps 
+  150  docker ps -a
+  151  docker ps 
+  152  docker start myweb-petclinic-cont-1
+  153  docker ps 
+  154  docker kill myweb-petclinic-cont-1
+  155  docker rm $(docker ps -a | grep -i busybox | awk -F " " '{print $1}')
+  156  docker ps -a 
+  157  docker start myweb-petclinic-cont-1
+  158  ls
+  159  cd devops-acc-2020March16/
+  160  ls
+  161  mkdir 03-Docker
+  162  cd 03-Docker/
+  163  ls
+  164  history 
+  165  history > Day3_Docker.txt
