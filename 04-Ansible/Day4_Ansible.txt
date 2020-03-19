@@ -147,3 +147,59 @@
   147  cd ..
   148  ls
   149  history > Day4_Ansible.txt 
+  150  ls
+  151  git add . ; git commit -m "Scaleout Inventory"; git push
+  152  ls
+  153  cd 02-Scale-Out-Inventory/production/
+  154  ls
+  155  cat group_vars/webserver 
+  156  cat host_vars/172.42.42.102 
+  157  ls
+  158  cd ..
+  159  ls
+  160  cd ..
+  161  ls
+  162  cp -rf 01-Inventory 03-Modules
+  163  ls
+  164  cd 03-Modules/
+  165  ls
+  166  ansible webserver -m apt -a "name=apache2 state=present" -s 
+  167  ansible webserver -m service -a "name=apache2 state=stopped" -s 
+  168  ansible webserver -m service -a "name=apache2 state=status" -s 
+  169  ansible webserver -m service -a "name=apache2" -s 
+  170  ansible webserver -m command -a "systemctl status apache2" -s 
+  171  ansible webserver -m service -a "name=apache2 state=started" -s 
+  172  ls
+  173  s
+  174  ls
+  175  vi inventory 
+  176  ansible webserver:dbserver -m ping 
+  177  cat inventory 
+  178  ansible ansible:webserver -m ping 
+  179  ansible 'ansible:&webserver' -m ping 
+  180  vi inventory 
+  181  ansible 'ansible:&webserver' -m ping 
+  182  ansible 'ansible:&webserver:!python' -m ping 
+  183  ansible 'ansible:webserver:!python' -m ping 
+  184  vi inventory 
+  185  cat inventory 
+  186  ansible 'ansible:webserver:!python3' -m ping 
+  187  ls
+  188  vi inventory 
+  189  ansible 'webserver' -m ping 
+  190  ansible 'dbserver' -m ping 
+  191  ansible 'jboss' -m ping 
+  192  ansible 'prod' -m ping 
+  193  ansible 'test' -m ping 
+  194  ansible 'webserver:&prod' -m ping 
+  195  ansible 'webserver:&test' -m ping 
+  196  ansible 'dbserver:&test' -m ping 
+  197  ansible 'dbserver:&prod' -m ping 
+  198  ansible 'dbserver:&test:!python3' -m ping 
+  199  vim inventory 
+  200  ansible 'dbserver:&test:!python3' -m ping 
+  201  ansible 'dbserver:&test:&python3' -m ping 
+  202  ls
+  203  cd ..
+  204  ls
+  205  history > Day4_Ansible.txt 
