@@ -1,0 +1,25 @@
+---
+
+- hosts: webserver
+  name: My Apache Server Installation
+  become: yes 
+
+  tasks: 
+  - name: Install Apache Packages
+    apt: name=apache2 state=present
+
+  - name: Start the Apache Service
+    service: name=apache2 state=stopped
+
+  - name: Check OS Release
+    command: 'cat /etc/os-release'
+
+
+
+- hosts: dbserver
+  name: Getting Ready for GIT Clint
+  become: yes 
+
+  tasks: 
+  - name: Install GIT Packages
+    apt: name=git state=present
