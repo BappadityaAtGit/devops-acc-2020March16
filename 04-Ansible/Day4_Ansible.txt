@@ -1,250 +1,380 @@
-    1  cd devops-acc-2020March16/
-    2  ls
-    3  mkdir 04-Ansible
-    4  ls
-    5  cd 04-Ansible/
-    6  ls
-    7  mkdir 01-Inventory
-    8  cd 01-Inventory/
+    1  git version 
+    2  mkdir mydevops-gitrepo
+    3  ls
+    4  cd mydevops-gitrepo/
+    5  ls -a 
+    6  git init 
+    7  ls -a 
+    8  ls -a .git/* 
     9  ls
-   10  cat /etc/hosts
-   11  cat /etc/hosts | grep -i k
-   12  ls
-   13  ls -ltr /etc/ansible/ls
+   10  git config --global --list 
+   11  git config --global user.name "Amit Vashist"
+   12  git config --global user.email "amitvashist.tech@gmail.com"
+   13  git config --global --list 
    14  ls
-   15  cat /etc/hosts
-   16  vi inventory
-   17  ssh vagrant@172.42.42.101
-   18  ls
-   19  ansible all -i inventory -u vagrant -m ping -k  
-   20  ls
-   21  vi ansible.cfg
-   22  grep -i checking /etc/ansible/ansible.cfg 
-   23  ansible all -i inventory -u vagrant -m ping -k  
-   24  ansible-doc -l 
-   25  ansible-doc ping 
-   26  ls
-   27  vi ansible.cfg 
-   28  ansible all -u vagrant -m ping -k  
+   15  echo "Welcome to Git Demo" > HelloWorld.txt
+   16  cat HelloWorld.txt 
+   17  git status 
+   18  git add HelloWorld.txt 
+   19  git status 
+   20  git commit -m "Initial HelloWorld"
+   21  git status 
+   22  ls
+   23  git log 
+   24  cd ..
+   25  ls
+   26  mv mydevops-gitrepo /tmp/
+   27  ls
+   28  cd /tmp/mydevops-gitrepo/
    29  ls
-   30  vi inventory 
-   31  ansible all -u vagrant -m ping -k  
-   32  ansible all -i inventory -u vagrant -m ping -k  
-   33  ansible -u vagrant -m ping -k  
-   34  ansible webserver -u vagrant -m ping -k  
-   35  ansible ansible -u vagrant -m ping -k  
-   36  ansible dbserver -u vagrant -m ping -k  
-   37  ansible dbserver -u vagrant -m command -a 'df -h' -k  
-   38  ansible all -u vagrant -m command -a 'df -h' -k  
-   39  ansible all -u vagrant -m command -a 'arch' -k  
-   40  cat /etc/*-release
-   41  ansible all -u vagrant -m command -a 'cat /etc/*-release' -k  
-   42  cat /etc/*-release
-   43  ansible all -u vagrant -m shell -a 'cat /etc/*-release' -k  
-   44  cat /etc/os-release 
-   45  ansible all -u vagrant -m command -a 'cat /etc/os-release' -k  
-   46  ls
-   47  vi inventory 
-   48  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   
-   49  ansible ansible -u vagrant -m command -a 'cat /etc/os-release' -k 
-   50  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   
-   51  cat inventory 
-   52  vi inventory 
-   53  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   -k 
-   54  ls
-   55  cd ..
-   56  ls
-   57  cd 01-Inventory/
-   58  ls
-   59  vim inventory 
-   60  ansible all -u vagrant -m command -a 'cat /etc/os-release'   -k 
-   61  vim inventory 
-   62  ansible all -u vagrant -m command -a 'cat /etc/os-release'   -k 
-   63  ls
-   64  vi inventory 
-   65  ansible dc -u vagrant -m command -a 'cat /etc/os-release'   -k 
-   66  ansible dc -u vagrant -m ping   -k 
-   67  cat /etc/ansible/hosts 
-   68  ls
-   69  vi inventory 
-   70  ansible dc -u vagrant -m ping   -k 
-   71  ld
-   72  ls
-   73  rm 1
-   74  vi inventory 
-   75  ansible dc -m ping 
-   76  vi inventory 
-   77  ansible dc -m ping 
-   78  vi inventory 
-   79  ansible dc -m ping 
-   80  vi inventory 
-   81  ansible dc -m ping 
-   82  ls
-   83  cd ..
-   84  ls
-   85  history > Day4_Ansible.txt
-   86  cd ..
+   30  git log 
+   31  exit
+   32  ls
+   33  cd ..
+   34  ls
+   35  ls -ltr mydevops-gitrepo/
+   36  chmod -R 777 mydevops-gitrepo
+   37  exit 
+   38  ls
+   39  exit 
+   40  docker run -i busybox
+   41  exit
+   42  cd devops-acc-2020March16/
+   43  ls
+   44  mkdir 04-Ansible
+   45  ls
+   46  cd 04-Ansible/
+   47  ls
+   48  mkdir 01-Inventory
+   49  cd 01-Inventory/
+   50  ls
+   51  cat /etc/hosts
+   52  cat /etc/hosts | grep -i k
+   53  ls
+   54  ls -ltr /etc/ansible/ls
+   55  ls
+   56  cat /etc/hosts
+   57  vi inventory
+   58  ssh vagrant@172.42.42.101
+   59  ls
+   60  ansible all -i inventory -u vagrant -m ping -k  
+   61  ls
+   62  vi ansible.cfg
+   63  grep -i checking /etc/ansible/ansible.cfg 
+   64  ansible all -i inventory -u vagrant -m ping -k  
+   65  ansible-doc -l 
+   66  ansible-doc ping 
+   67  ls
+   68  vi ansible.cfg 
+   69  ansible all -u vagrant -m ping -k  
+   70  ls
+   71  vi inventory 
+   72  ansible all -u vagrant -m ping -k  
+   73  ansible all -i inventory -u vagrant -m ping -k  
+   74  ansible -u vagrant -m ping -k  
+   75  ansible webserver -u vagrant -m ping -k  
+   76  ansible ansible -u vagrant -m ping -k  
+   77  ansible dbserver -u vagrant -m ping -k  
+   78  ansible dbserver -u vagrant -m command -a 'df -h' -k  
+   79  ansible all -u vagrant -m command -a 'df -h' -k  
+   80  ansible all -u vagrant -m command -a 'arch' -k  
+   81  cat /etc/*-release
+   82  ansible all -u vagrant -m command -a 'cat /etc/*-release' -k  
+   83  cat /etc/*-release
+   84  ansible all -u vagrant -m shell -a 'cat /etc/*-release' -k  
+   85  cat /etc/os-release 
+   86  ansible all -u vagrant -m command -a 'cat /etc/os-release' -k  
    87  ls
-   88  ansible-doc raw
-   89  ls
-   90  git add . ; git commit -m "Ansible-Inventory"; git push 
-   91  ls
-   92  cat 04-Ansible/01-Inventory/inventory 
-   93  ansible all -m ping 
-   94  cd 04-Ansible/01-Inventory/
-   95  ansible all -m ping 
-   96  vi inventory 
-   97  history 
-   98  ls
-   99  cd ..
-  100  ls
-  101  cp -rf 01-Inventory 02-Scale-Out-Inventory
-  102  ls
-  103  cd 02-Scale-Out-Inventory/
+   88  vi inventory 
+   89  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   
+   90  ansible ansible -u vagrant -m command -a 'cat /etc/os-release' -k 
+   91  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   
+   92  cat inventory 
+   93  vi inventory 
+   94  ansible ansible -u vagrant -m command -a 'cat /etc/os-release'   -k 
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd 01-Inventory/
+   99  ls
+  100  vim inventory 
+  101  ansible all -u vagrant -m command -a 'cat /etc/os-release'   -k 
+  102  vim inventory 
+  103  ansible all -u vagrant -m command -a 'cat /etc/os-release'   -k 
   104  ls
-  105  mkdir -p {production,test}/{group_vars,host_vars}
-  106  ls -R . 
-  107  ls
-  108  cp -rf inventory production/
-  109  cp -rf inventory test/
-  110  ls
-  111  cp -rf ansible.cfg production/
-  112  cp -rf ansible.cfg test/
+  105  vi inventory 
+  106  ansible dc -u vagrant -m command -a 'cat /etc/os-release'   -k 
+  107  ansible dc -u vagrant -m ping   -k 
+  108  cat /etc/ansible/hosts 
+  109  ls
+  110  vi inventory 
+  111  ansible dc -u vagrant -m ping   -k 
+  112  ld
   113  ls
-  114  rm -rf ansible.cfg inventory 
-  115  ls
-  116  cd production/
-  117  ;s
-  118  ls
-  119  vi group_vars/all
-  120  ansible all -m user -a "name={{username}} password=12345" -s
+  114  rm 1
+  115  vi inventory 
+  116  ansible dc -m ping 
+  117  vi inventory 
+  118  ansible dc -m ping 
+  119  vi inventory 
+  120  ansible dc -m ping 
   121  vi inventory 
-  122  ansible all -m user -a "name={{username}} password=12345" -s
+  122  ansible dc -m ping 
   123  ls
-  124  cat group_vars/all 
+  124  cd ..
   125  ls
-  126  cp -rf group_vars/all group_vars/webserver
-  127  vi group_vars/webserver
-  128  ansible all -m user -a "name={{username}} password=12345" -s
-  129  ls
-  130  cat group_vars/webserver 
-  131  ls
-  132  ansible all -m user -a "name={{username}} password=12345" -s
-  133  ls
-  134  cp -rf group_vars/all host_vars/172.42.42.102
-  135  vi host_vars/172.42.42.102 
-  136  ansible all -m user -a "name={{username}} password=12345" -s
-  137  ls
-  138  ansible all -m user -a "name={{username}} password=12345" -s
-  139  ansible all -m user -a "name={{username}}" -s
-  140  apt-get install tree -y 
-  141  ls 
-  142  tree . 
-  143  cd ..
-  144  ls
-  145  tree . 
-  146  ls
-  147  cd ..
+  126  history > Day4_Ansible.txt
+  127  cd ..
+  128  ls
+  129  ansible-doc raw
+  130  ls
+  131  git add . ; git commit -m "Ansible-Inventory"; git push 
+  132  ls
+  133  cat 04-Ansible/01-Inventory/inventory 
+  134  ansible all -m ping 
+  135  cd 04-Ansible/01-Inventory/
+  136  ansible all -m ping 
+  137  vi inventory 
+  138  history 
+  139  ls
+  140  cd ..
+  141  ls
+  142  cp -rf 01-Inventory 02-Scale-Out-Inventory
+  143  ls
+  144  cd 02-Scale-Out-Inventory/
+  145  ls
+  146  mkdir -p {production,test}/{group_vars,host_vars}
+  147  ls -R . 
   148  ls
-  149  history > Day4_Ansible.txt 
-  150  ls
-  151  git add . ; git commit -m "Scaleout Inventory"; git push
-  152  ls
-  153  cd 02-Scale-Out-Inventory/production/
+  149  cp -rf inventory production/
+  150  cp -rf inventory test/
+  151  ls
+  152  cp -rf ansible.cfg production/
+  153  cp -rf ansible.cfg test/
   154  ls
-  155  cat group_vars/webserver 
-  156  cat host_vars/172.42.42.102 
-  157  ls
-  158  cd ..
+  155  rm -rf ansible.cfg inventory 
+  156  ls
+  157  cd production/
+  158  ;s
   159  ls
-  160  cd ..
-  161  ls
-  162  cp -rf 01-Inventory 03-Modules
-  163  ls
-  164  cd 03-Modules/
-  165  ls
-  166  ansible webserver -m apt -a "name=apache2 state=present" -s 
-  167  ansible webserver -m service -a "name=apache2 state=stopped" -s 
-  168  ansible webserver -m service -a "name=apache2 state=status" -s 
-  169  ansible webserver -m service -a "name=apache2" -s 
-  170  ansible webserver -m command -a "systemctl status apache2" -s 
-  171  ansible webserver -m service -a "name=apache2 state=started" -s 
+  160  vi group_vars/all
+  161  ansible all -m user -a "name={{username}} password=12345" -s
+  162  vi inventory 
+  163  ansible all -m user -a "name={{username}} password=12345" -s
+  164  ls
+  165  cat group_vars/all 
+  166  ls
+  167  cp -rf group_vars/all group_vars/webserver
+  168  vi group_vars/webserver
+  169  ansible all -m user -a "name={{username}} password=12345" -s
+  170  ls
+  171  cat group_vars/webserver 
   172  ls
-  173  s
+  173  ansible all -m user -a "name={{username}} password=12345" -s
   174  ls
-  175  vi inventory 
-  176  ansible webserver:dbserver -m ping 
-  177  cat inventory 
-  178  ansible ansible:webserver -m ping 
-  179  ansible 'ansible:&webserver' -m ping 
-  180  vi inventory 
-  181  ansible 'ansible:&webserver' -m ping 
-  182  ansible 'ansible:&webserver:!python' -m ping 
-  183  ansible 'ansible:webserver:!python' -m ping 
-  184  vi inventory 
-  185  cat inventory 
-  186  ansible 'ansible:webserver:!python3' -m ping 
+  175  cp -rf group_vars/all host_vars/172.42.42.102
+  176  vi host_vars/172.42.42.102 
+  177  ansible all -m user -a "name={{username}} password=12345" -s
+  178  ls
+  179  ansible all -m user -a "name={{username}} password=12345" -s
+  180  ansible all -m user -a "name={{username}}" -s
+  181  apt-get install tree -y 
+  182  ls 
+  183  tree . 
+  184  cd ..
+  185  ls
+  186  tree . 
   187  ls
-  188  vi inventory 
-  189  ansible 'webserver' -m ping 
-  190  ansible 'dbserver' -m ping 
-  191  ansible 'jboss' -m ping 
-  192  ansible 'prod' -m ping 
-  193  ansible 'test' -m ping 
-  194  ansible 'webserver:&prod' -m ping 
-  195  ansible 'webserver:&test' -m ping 
-  196  ansible 'dbserver:&test' -m ping 
-  197  ansible 'dbserver:&prod' -m ping 
-  198  ansible 'dbserver:&test:!python3' -m ping 
-  199  vim inventory 
-  200  ansible 'dbserver:&test:!python3' -m ping 
-  201  ansible 'dbserver:&test:&python3' -m ping 
+  188  cd ..
+  189  ls
+  190  history > Day4_Ansible.txt 
+  191  ls
+  192  git add . ; git commit -m "Scaleout Inventory"; git push
+  193  ls
+  194  cd 02-Scale-Out-Inventory/production/
+  195  ls
+  196  cat group_vars/webserver 
+  197  cat host_vars/172.42.42.102 
+  198  ls
+  199  cd ..
+  200  ls
+  201  cd ..
   202  ls
-  203  cd ..
+  203  cp -rf 01-Inventory 03-Modules
   204  ls
-  205  history > Day4_Ansible.txt 
-  206  cd ..
-  207  ls
-  208  git add . ; git commit -m "Modules"; git push
-  209  ls
-  210  cd 04-Ansible/
-  211  ls
-  212  cp -rf 01-Inventory 04-Playbook
-  213  cd 04-Playbook/
-  214  ls
-  215  vim webserver-playbook.yaml
-  216  ls
-  217  ansible-playbook webserver-playbook.yaml 
-  218  vim webserver-playbook.yaml
-  219  ansible-playbook webserver-playbook.yaml 
-  220  vim webserver-playbook.yaml
-  221  ansible-playbook webserver-playbook.yaml 
-  222  vim webserver-playbook.yaml
-  223  ansible-playbook webserver-playbook.yaml 
-  224  ls
-  225  vi webserver-playbook.yaml 
-  226  ansible-playbook webserver-playbook.yaml 
-  227  vi webserver-playbook.yaml 
-  228  ansible-playbook webserver-playbook.yaml 
-  229  vi webserver-playbook.yaml 
-  230  ansible-playbook webserver-playbook.yaml 
-  231  vi webserver-playbook.yaml 
-  232  ansible-playbook webserver-playbook.yaml 
-  233  ls
-  234  cd ..
-  235  ls
-  236  cd ..
-  237  ls
-  238  git add . ; git commit -m "Playbook"; git push 
-  239  ls
-  240  cd 04-Ansible/
-  241  ls
-  242  cd 04-Playbook/
+  205  cd 03-Modules/
+  206  ls
+  207  ansible webserver -m apt -a "name=apache2 state=present" -s 
+  208  ansible webserver -m service -a "name=apache2 state=stopped" -s 
+  209  ansible webserver -m service -a "name=apache2 state=status" -s 
+  210  ansible webserver -m service -a "name=apache2" -s 
+  211  ansible webserver -m command -a "systemctl status apache2" -s 
+  212  ansible webserver -m service -a "name=apache2 state=started" -s 
+  213  ls
+  214  s
+  215  ls
+  216  vi inventory 
+  217  ansible webserver:dbserver -m ping 
+  218  cat inventory 
+  219  ansible ansible:webserver -m ping 
+  220  ansible 'ansible:&webserver' -m ping 
+  221  vi inventory 
+  222  ansible 'ansible:&webserver' -m ping 
+  223  ansible 'ansible:&webserver:!python' -m ping 
+  224  ansible 'ansible:webserver:!python' -m ping 
+  225  vi inventory 
+  226  cat inventory 
+  227  ansible 'ansible:webserver:!python3' -m ping 
+  228  ls
+  229  vi inventory 
+  230  ansible 'webserver' -m ping 
+  231  ansible 'dbserver' -m ping 
+  232  ansible 'jboss' -m ping 
+  233  ansible 'prod' -m ping 
+  234  ansible 'test' -m ping 
+  235  ansible 'webserver:&prod' -m ping 
+  236  ansible 'webserver:&test' -m ping 
+  237  ansible 'dbserver:&test' -m ping 
+  238  ansible 'dbserver:&prod' -m ping 
+  239  ansible 'dbserver:&test:!python3' -m ping 
+  240  vim inventory 
+  241  ansible 'dbserver:&test:!python3' -m ping 
+  242  ansible 'dbserver:&test:&python3' -m ping 
   243  ls
-  244  cat inventory 
-  245  cat ansible.cfg 
-  246  history 
-  247  ls
-  248  cd ..
-  249  ls
-  250  history > Day4_Ansible.txt 
+  244  cd ..
+  245  ls
+  246  history > Day4_Ansible.txt 
+  247  cd ..
+  248  ls
+  249  git add . ; git commit -m "Modules"; git push
+  250  ls
+  251  cd 04-Ansible/
+  252  ls
+  253  cp -rf 01-Inventory 04-Playbook
+  254  cd 04-Playbook/
+  255  ls
+  256  vim webserver-playbook.yaml
+  257  ls
+  258  ansible-playbook webserver-playbook.yaml 
+  259  vim webserver-playbook.yaml
+  260  ansible-playbook webserver-playbook.yaml 
+  261  vim webserver-playbook.yaml
+  262  ansible-playbook webserver-playbook.yaml 
+  263  vim webserver-playbook.yaml
+  264  ansible-playbook webserver-playbook.yaml 
+  265  ls
+  266  vi webserver-playbook.yaml 
+  267  ansible-playbook webserver-playbook.yaml 
+  268  vi webserver-playbook.yaml 
+  269  ansible-playbook webserver-playbook.yaml 
+  270  vi webserver-playbook.yaml 
+  271  ansible-playbook webserver-playbook.yaml 
+  272  vi webserver-playbook.yaml 
+  273  ansible-playbook webserver-playbook.yaml 
+  274  ls
+  275  cd ..
+  276  ls
+  277  cd ..
+  278  ls
+  279  git add . ; git commit -m "Playbook"; git push 
+  280  ls
+  281  cd 04-Ansible/
+  282  ls
+  283  cd 04-Playbook/
+  284  ls
+  285  cat inventory 
+  286  cat ansible.cfg 
+  287  history 
+  288  ls
+  289  cd ..
+  290  ls
+  291  history > Day4_Ansible.txt 
+  292  git add . ; git commit -m "Playbook"; git push 
+  293  ls
+  294  cd 04-Playbook/
+  295  ls
+  296  cat inventory | grep -i ssh
+  297  exit 
+  298  ls
+  299  cd devops-acc-2020March16/
+  300  ls
+  301  cd 04-Ansible/
+  302  ls
+  303  cp -rf 04-Playbook 05-Templates
+  304  ls
+  305  cd 05-Templates/
+  306  ls
+  307  mkdir templates
+  308  ls
+  309  vim templates/index.html
+  310  ls
+  311  vim webserver-playbook.yaml 
+  312  ansible-playbook webserver-playbook.yaml 
+  313  vim webserver-playbook.yaml 
+  314  ansible-playbook webserver-playbook.yaml 
+  315  ls
+  316  vim templates/index.html 
+  317  ansible-playbook webserver-playbook.yaml 
+  318  ls
+  319  vim templates/info.j2
+  320  ls
+  321  vi webserver-playbook.yaml 
+  322  ansible-playbook webserver-playbook.yaml 
+  323  vi webserver-playbook.yaml 
+  324  ls
+  325  ansible-playbook webserver-playbook.yaml 
+  326  cat templates/info.j2 
+  327  ls
+  328  cat inventory 
+  329  ansible 172.42.42.101 -m setup 
+  330  vi templates/info.j2 
+  331  ansible-playbook webserver-playbook.yaml 
+  332  ls
+  333  vim webserver-playbook.yaml 
+  334  ls
+  335  vim templates/info.j2 
+  336  ls
+  337  ansible-playbook webserver-playbook.yaml 
+  338  ls
+  339  vim webserver-playbook.yaml 
+  340  ansible-playbook webserver-playbook.yaml 
+  341  cat templates/info.j2 
+  342  vi webserver-playbook.yaml 
+  343  ansible-playbook webserver-playbook.yaml 
+  344  ls
+  345  vim webserver-playbook.yaml 
+  346  ls
+  347  vim templates/info.j2 
+  348  ansible-playbook webserver-playbook.yaml 
+  349  vi webserver-playbook.yaml 
+  350  ansible-playbook webserver-playbook.yaml 
+  351  vi webserver-playbook.yaml 
+  352  vi templates/info.j2 
+  353  ansible-playbook webserver-playbook.yaml 
+  354  cd 
+  355  ansible-galaxy install geerlingguy.docker
+  356  cd - 
+  357  ls
+  358  mkdir roles
+  359  cp -rf /etc/ansible/roles/geerlingguy.docker roles/docker 
+  360  ls
+  361  cd roles/
+  362  ls
+  363  cd docker/
+  364  ls
+  365  cat tasks/main.yml 
+  366  ls
+  367  cd ..
+  368  ls
+  369  cd ..
+  370  ls
+  371  vim webserver-playbook.yaml 
+  372  ansible-playbook webserver-playbook.yaml 
+  373  ls
+  374  vim webserver-playbook.yaml 
+  375  ls
+  376  cd .
+  377  ls
+  378  cd ..
+  379  ls
+  380  history > Day4_Ansible.txt 
