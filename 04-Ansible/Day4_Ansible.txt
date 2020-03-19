@@ -83,3 +83,67 @@
    83  cd ..
    84  ls
    85  history > Day4_Ansible.txt
+   86  cd ..
+   87  ls
+   88  ansible-doc raw
+   89  ls
+   90  git add . ; git commit -m "Ansible-Inventory"; git push 
+   91  ls
+   92  cat 04-Ansible/01-Inventory/inventory 
+   93  ansible all -m ping 
+   94  cd 04-Ansible/01-Inventory/
+   95  ansible all -m ping 
+   96  vi inventory 
+   97  history 
+   98  ls
+   99  cd ..
+  100  ls
+  101  cp -rf 01-Inventory 02-Scale-Out-Inventory
+  102  ls
+  103  cd 02-Scale-Out-Inventory/
+  104  ls
+  105  mkdir -p {production,test}/{group_vars,host_vars}
+  106  ls -R . 
+  107  ls
+  108  cp -rf inventory production/
+  109  cp -rf inventory test/
+  110  ls
+  111  cp -rf ansible.cfg production/
+  112  cp -rf ansible.cfg test/
+  113  ls
+  114  rm -rf ansible.cfg inventory 
+  115  ls
+  116  cd production/
+  117  ;s
+  118  ls
+  119  vi group_vars/all
+  120  ansible all -m user -a "name={{username}} password=12345" -s
+  121  vi inventory 
+  122  ansible all -m user -a "name={{username}} password=12345" -s
+  123  ls
+  124  cat group_vars/all 
+  125  ls
+  126  cp -rf group_vars/all group_vars/webserver
+  127  vi group_vars/webserver
+  128  ansible all -m user -a "name={{username}} password=12345" -s
+  129  ls
+  130  cat group_vars/webserver 
+  131  ls
+  132  ansible all -m user -a "name={{username}} password=12345" -s
+  133  ls
+  134  cp -rf group_vars/all host_vars/172.42.42.102
+  135  vi host_vars/172.42.42.102 
+  136  ansible all -m user -a "name={{username}} password=12345" -s
+  137  ls
+  138  ansible all -m user -a "name={{username}} password=12345" -s
+  139  ansible all -m user -a "name={{username}}" -s
+  140  apt-get install tree -y 
+  141  ls 
+  142  tree . 
+  143  cd ..
+  144  ls
+  145  tree . 
+  146  ls
+  147  cd ..
+  148  ls
+  149  history > Day4_Ansible.txt 
