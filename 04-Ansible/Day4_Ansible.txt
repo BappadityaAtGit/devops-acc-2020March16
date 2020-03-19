@@ -203,3 +203,48 @@
   203  cd ..
   204  ls
   205  history > Day4_Ansible.txt 
+  206  cd ..
+  207  ls
+  208  git add . ; git commit -m "Modules"; git push
+  209  ls
+  210  cd 04-Ansible/
+  211  ls
+  212  cp -rf 01-Inventory 04-Playbook
+  213  cd 04-Playbook/
+  214  ls
+  215  vim webserver-playbook.yaml
+  216  ls
+  217  ansible-playbook webserver-playbook.yaml 
+  218  vim webserver-playbook.yaml
+  219  ansible-playbook webserver-playbook.yaml 
+  220  vim webserver-playbook.yaml
+  221  ansible-playbook webserver-playbook.yaml 
+  222  vim webserver-playbook.yaml
+  223  ansible-playbook webserver-playbook.yaml 
+  224  ls
+  225  vi webserver-playbook.yaml 
+  226  ansible-playbook webserver-playbook.yaml 
+  227  vi webserver-playbook.yaml 
+  228  ansible-playbook webserver-playbook.yaml 
+  229  vi webserver-playbook.yaml 
+  230  ansible-playbook webserver-playbook.yaml 
+  231  vi webserver-playbook.yaml 
+  232  ansible-playbook webserver-playbook.yaml 
+  233  ls
+  234  cd ..
+  235  ls
+  236  cd ..
+  237  ls
+  238  git add . ; git commit -m "Playbook"; git push 
+  239  ls
+  240  cd 04-Ansible/
+  241  ls
+  242  cd 04-Playbook/
+  243  ls
+  244  cat inventory 
+  245  cat ansible.cfg 
+  246  history 
+  247  ls
+  248  cd ..
+  249  ls
+  250  history > Day4_Ansible.txt 
