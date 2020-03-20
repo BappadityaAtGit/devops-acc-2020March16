@@ -32,6 +32,14 @@ node {
        stage('Petclinic Deployment to Stage Env.') {
         sh label: '', script: 'docker-compose up -d --build'
        }
+
+
+       stage('Petclinic Deployment to Prod Env.') {
+        sh label: '', script: 'cp -rf target/petclinic.war ../../04-Ansible/06-Roles/roles/tomcat/templates/petclinic.war'
+        sh label: '', script: "echo '<h1>TASK_ID: '${env.JOB_NAME}[${env.BUILD_NUMBER}]'</h1>' > ../../04-Ansible/06-Roles/roles/tomcat/templates/jenkins.html'
+        sh label: '', script: 'cd ../../04-Ansible/06-Roles/;ansible-playbook site.yaml'
+       }
+
     }
     notify('Completed')
 }
