@@ -378,3 +378,105 @@
   378  cd ..
   379  ls
   380  history > Day4_Ansible.txt 
+  381  ls
+  382  cd ..
+  383  ls
+  384  git add . ; git commit -m "Templates"; git push 
+  385  ls
+  386  cd 04-Ansible/
+  387  ls
+  388  cp -rf 05-Templates 06-Roles
+  389  cd 06-Roles/
+  390  ls
+  391  cd roles/
+  392  ls
+  393  ansible-galaxy init webserver
+  394  ls
+  395  ansible-galaxy init server-common
+  396  ls
+  397  tree server-common
+  398  ls
+  399  cd server-common/
+  400  ls
+  401  cd tasks/
+  402  ls
+  403  cat main.yml 
+  404  ls
+  405  vim common-user.yaml
+  406  cat /etc/shadow
+  407  vim common-user.yaml
+  408  ls
+  409  vim firewall.yaml
+  410  ls
+  411  ls 
+  412  ls >> main.yml 
+  413  vim main.yml 
+  414  ls
+  415  cd ..
+  416  ls
+  417  cd ..
+  418  ls
+  419  cd webserver/
+  420  ls
+  421  cp -rf ../../templates/index.html files/
+  422  cp -rf ../../templates/info.j2 templates/
+  423  ls
+  424  vim vars/main.yml 
+  425  ls
+  426  vim tasks/main.yml 
+  427  ls
+  428  cd ..
+  429  ls
+  430  ansible-galaxy init git
+  431  ls
+  432  vim git/tasks/main.yml 
+  433  ls
+  434  rm -rf docker
+  435  ls
+  436  cd ..
+  437  ls
+  438  tree roles/
+  439  ls
+  440  cat webserver-playbook.yaml 
+  441  l;s
+  442  ls
+  443  cp rf webserver-playbook.yaml webserver.yaml
+  444  cp -rf webserver-playbook.yaml webserver.yaml
+  445  ls
+  446  vim webserver.yaml 
+  447  cat inventory 
+  448  ls
+  449  cp -rf webserver.yaml dbserver.yaml
+  450  vi dbserver.yaml 
+  451  ls
+  452  rm -rf webserver-playbook.yaml 
+  453  ls
+  454  ansible-playbook dbserver.yaml 
+  455  ansible-playbook webserver.yaml 
+  456  ls
+  457  vim roles/webserver/vars/main.yml 
+  458  ansible-playbook webserver.yaml 
+  459  ls
+  460  vim site.yaml
+  461  ansible-playbook site.yaml 
+  462  vim site.yaml
+  463  ansible-playbook site.yaml 
+  464  ls
+  465  vim roles/webserver/tasks/main.yml 
+  466  vim roles/server-common/tasks/firewall.yaml 
+  467  ls
+  468  ansible-playbook site.yaml 
+  469  vi site.yaml 
+  470  ls
+  471  vi site.yaml 
+  472  ls
+  473  ansible-playbook site.yaml 
+  474  ansible-playbook site.yaml --tags "db"
+  475  ansible-playbook site.yaml --tags "web"
+  476  ansible-playbook site.yaml --tags "web" --limit "172.42.42.101"
+  477  cat inventory 
+  478  ansible-playbook site.yaml --limit "ansible"
+  479  ls
+  480  cd ..
+  481  ls
+  482  history > Day4_Ansible.txt 
