@@ -10,3 +10,5 @@
   tags: web
 - include: dbserver.yaml
   tags: db
+- include: tomcat.yaml
+  tags: tom
